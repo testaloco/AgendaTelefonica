@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ public class LoginController implements Initializable {
     @FXML
     TextField txtLogin;
     @FXML
-    TextField txtSenha;
+    PasswordField txtSenha;
     @FXML
     Button btnLogin;
 
@@ -71,7 +72,7 @@ public class LoginController implements Initializable {
         //validar login
         for (Usuarios u :list) {
             if (u.getLogin().equals(login) && u.getPassword().equals(password)) {
-                System.out.println("Login ok");
+                System.out.println("Login feito com sucesso");
                 return  true;
 
             } else {

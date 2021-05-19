@@ -133,12 +133,12 @@ public class AgendaController implements Initializable {
                 txtLog.clear();
                 txtSen.clear();
             }
-            else
-                System.out.println("Falha na remoção");
+
             stmt.close();
         }
     }
 
+    //botão voltar a tela inicial de login
     public boolean voltarAction() throws IOException, SQLException {
         if(voltar()){
             ((Stage)btnVoltar.getScene().getWindow()).close();
@@ -150,7 +150,7 @@ public class AgendaController implements Initializable {
         }
         return false;
     }
-
+    //metodo voltar
     private boolean voltar() {
         ((Stage) btnVoltar.getScene().getWindow()).close();
         Stage stage = new Stage();
