@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.PasswordField?>
+<AnchorPane prefHeight="591.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgendaController">
+   <children>
+      <AnchorPane layoutX="15.0" layoutY="19.0" prefHeight="553.0" prefWidth="345.0" style="-fx-background-color: LightSkyBlue;">
+         <children>
+
+            <TextField fx:id="txtID" layoutX="27.0" layoutY="169.0" prefHeight="25.0" prefWidth="293.0" promptText="ID" />
+            <TextField fx:id="txtNome" layoutX="27.0" layoutY="209.0" prefHeight="25.0" prefWidth="293.0" promptText="Digite seu nome:" />
+            <TextField fx:id="txtTelefone" layoutX="27.0" layoutY="247.0" prefHeight="25.0" prefWidth="293.0" promptText="Digite seu numero:" />
+            <TextField fx:id="txtEmail" layoutX="27.0" layoutY="285.0" prefHeight="25.0" prefWidth="293.0" promptText="Digite seu email:" />
+            <TextField fx:id="txtLog" layoutX="28.0" layoutY="326.0" prefHeight="25.0" prefWidth="293.0" promptText="Login:" />
+            <PasswordField fx:id="txtSen" layoutX="28.0" layoutY="363.0" prefHeight="25.0" prefWidth="293.0" promptText="Senha: " />
+            <Button fx:id="btnCadastro" layoutX="27.0" layoutY="398.0" mnemonicParsing="false" onAction="#cadastroAction" prefHeight="27.0" prefWidth="293.0" text="Cadastrar">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAlterar" layoutX="28.0" layoutY="425.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="27.0" prefWidth="293.0" text="Alterar">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnExcluir" layoutX="28.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="27.0" prefWidth="293.0" text="Excluir">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnVoltar" layoutX="28.0" layoutY="506.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="293.0" text="Voltar ao Login">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="btnC" fitHeight="157.0" fitWidth="153.0" layoutX="96.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/image_0001.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnPesquisar" layoutX="28.0" layoutY="452.0" mnemonicParsing="false" onAction="#searchAction" prefHeight="25.0" prefWidth="293.0" text="Pesquisar" textAlignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
