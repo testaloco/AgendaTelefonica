@@ -4,12 +4,17 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 
@@ -103,9 +108,9 @@ public class AgendaController implements Initializable {
             stmt.setString(5, txtSen.getText());
             stmt.setInt(6,Integer.valueOf(txtID.getText()));
             if (stmt.execute() == false)
-                System.out.println("Registro Salvo com Sucesso");
+                System.out.println("Registro alterado  com Sucesso");
             else
-                System.out.println("Falha no cadastro");
+                System.out.println("Error!!!!");
             stmt.close();
         }
     }
@@ -132,6 +137,33 @@ public class AgendaController implements Initializable {
                 System.out.println("Falha na remoção");
             stmt.close();
         }
+    }
+
+    public boolean voltarAction() throws IOException, SQLException {
+        if(voltar()){
+            ((Stage)btnVoltar.getScene().getWindow()).close();
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/views/login.fxml"));
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login");
+            stage.show();
+        }
+        return false;
+    }
+
+    private boolean voltar() {
+        ((Stage) btnVoltar.getScene().getWindow()).close();
+        Stage stage = new Stage();
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/views/login.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setScene(new Scene(root));
+        stage.setTitle("Login");
+        stage.show();
+        return false;
     }
 
 
